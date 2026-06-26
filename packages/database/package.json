@@ -1,0 +1,20 @@
+{
+  "name": "@platform/database",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "db:migrate": "node -r ts-node/register src/migrate.ts",
+    "db:seed": "node -r ts-node/register src/seeds/index.ts",
+    "db:rollback": "node -r ts-node/register src/rollback.ts"
+  },
+  "dependencies": {
+    "pg": "^8.11.5",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

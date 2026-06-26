@@ -1,0 +1,1 @@
+import React from 'react'; export default function Layer6GovernancePage() { return <div><h1 className='text-2xl font-bold mb-4'>Layer 6: Governance & Human-in-the-Loop</h1><p className='text-gray-500'>Review gates, audit logs, RBAC, explainability</p></div>; }

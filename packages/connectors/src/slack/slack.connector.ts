@@ -1,0 +1,1 @@
+import axios from 'axios'; export class SlackConnector { constructor(private token: string) {} async sendMessage(channel: string, text: string, blocks?: unknown[]) { return axios.post('https://slack.com/api/chat.postMessage', { channel, text, blocks }, { headers: { Authorization: Bearer  } }); } }

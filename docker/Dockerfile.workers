@@ -1,0 +1,25 @@
+FROM node:20-alpine AS base
+RUN apk add --no-cache python3 make g++
+WORKDIR /app
+
+FROM base AS deps
+COPY package.json pnpm-workspace.yaml pnpm-lock.yaml* ./
+COPY apps/workers/package.json ./apps/workers/
+COPY packages/shared/package.json ./packages/shared/
+COPY packages/llm-gateway/package.json ./packages/llm-gateway/
+COPY packages/connectors/package.json ./packages/connectors/
+COPY packages/database/package.json ./packages/database/
+RUN npm install -g pnpm && pnpm install --frozen-lockfile
+
+FROM deps AS builder
+COPY . .
+RUN pnpm --filter @platform/workers build
+
+FROM node:20-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production
+COPY --from=builder /app/apps/workers/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/apps/workers/package.json ./
+
+CMD ["node", "dist/index.js"]

@@ -1,0 +1,1 @@
+import React from 'react'; export default function Layer5AnalysisPage() { return <div><h1 className='text-2xl font-bold mb-4'>Layer 5: Analysis & Self-Healing</h1><p className='text-gray-500'>Result classification, failure clustering, locator self-healing</p></div>; }

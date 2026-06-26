@@ -1,0 +1,1 @@
+import React from 'react'; export default function Layer2DesignPage() { return <div><h1 className='text-2xl font-bold mb-4'>Layer 2: Test Design</h1><p className='text-gray-500'>Technique Engine, Risk Prioritization, Coverage Gap Analysis</p></div>; }

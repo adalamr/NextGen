@@ -1,0 +1,1 @@
+import React from 'react'; export default function ProjectsPage() { return <div className='text-gray-900'><h1 className='text-2xl font-bold mb-4'>Projects</h1><p className='text-gray-500'>Manage your projects here.</p></div>; }

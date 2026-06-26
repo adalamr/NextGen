@@ -1,0 +1,1 @@
+import React from 'react'; export default function Layer3GenerationPage() { return <div><h1 className='text-2xl font-bold mb-4'>Layer 3: AI Generation</h1><p className='text-gray-500'>Test Case Generation, Script Generation, Test Data</p></div>; }
